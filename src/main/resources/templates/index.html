@@ -1,0 +1,37 @@
+{{>layout/header}}
+<body>
+    <h1>{{message}}</h1>
+
+    <br />
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>NRP</th>
+            <th>Name</th>
+            <th>Option</th>
+        </tr>
+        {{#data}}
+            <tr>
+                <td>
+                    {{id}}
+                </td>
+                <td>
+                    {{nrp}}
+                </td>
+                <td>
+                    {{name}}
+                </td>
+                <td>
+                    <a href="/edit/{{id}}">
+                        Edit
+                    </a>
+                    <a href="/delete/{{id}}">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        {{/data}}
+    </table>
+</body>
+{{>layout/footer}}

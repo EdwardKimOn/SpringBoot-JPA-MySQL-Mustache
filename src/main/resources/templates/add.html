@@ -1,0 +1,58 @@
+{{>layout/header}}
+<body>
+    <h1>{{message}}</h1>
+
+    <br />
+
+    <form action="/add" method="post">
+        <table>
+            {{#id}}
+                <input type="number" name="id" value="{{id}}" hidden/>
+            {{/id}}
+
+            <tr>
+                <td>
+                    <label>NRP</label>
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{#nrp}}
+                        <input type="number" name="nrp" value="{{nrp}}" disabled />
+                    {{/nrp}}
+                    {{^nrp}}
+                        <input type="number" name="nrp" />
+                    {{/nrp}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Name</label>
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{#name}}
+                        <input name="name" value="{{name}}" />
+                    {{/name}}
+                    {{^name}}
+                        <input name="name" />
+                    {{/name}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{#id}}
+                        <input type="submit" value="Edit" />
+                    {{/id}}
+                    {{^id}}
+                        <input type="submit" value="Add" />
+                    {{/id}}
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+{{>layout/footer}}
